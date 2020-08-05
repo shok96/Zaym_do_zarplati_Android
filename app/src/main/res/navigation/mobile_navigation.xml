@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_zaymi">
+
+    <fragment
+        android:id="@+id/navigation_zaymi"
+        android:name="com.dozarplati.zaim.ui.zaymi.ZaymiFragment"
+        android:label="@string/title_zaymi"
+        tools:layout="@layout/fragment_zaymi" />
+
+    <fragment
+        android:id="@+id/navigation_cards"
+        android:name="com.dozarplati.zaim.ui.cards.cardsFragment"
+        android:label="@string/title_cards"
+        tools:layout="@layout/fragment_cards" />
+
+    <fragment
+        android:id="@+id/navigation_credit"
+        android:name="com.dozarplati.zaim.ui.credits.CreditsFragment"
+        android:label="@string/title_credit"
+        tools:layout="@layout/fragment_credit" />
+
+    <fragment
+        android:id="@+id/navigation_zaymi_detail"
+        android:name="com.dozarplati.zaim.ui.zaymiDetail.ZaymiDetail"
+        android:label="{title}"
+        tools:layout="@layout/fragment_zaymi_detail" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+</navigation>

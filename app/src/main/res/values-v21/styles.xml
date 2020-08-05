@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CardRatingBar" parent="android:Widget.Holo.RatingBar.Small">
+        <item name="android:progressTint">@color/star</item>
+    </style>
+</resources>

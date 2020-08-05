@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "329519598002",
+    "firebase_url": "https://id43-fintech.firebaseio.com",
+    "project_id": "id43-fintech",
+    "storage_bucket": "id43-fintech.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329519598002:android:cfa321f2d0aeb3d3b17cab",
+        "android_client_info": {
+          "package_name": "com.dozarplati.zaim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "329519598002-7vipdt9s36q6jbsnv7sv3u028llj7rf8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYV0O_7Rwg2bo7wFPUwOrCZ9zACZotm8Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "329519598002-7vipdt9s36q6jbsnv7sv3u028llj7rf8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

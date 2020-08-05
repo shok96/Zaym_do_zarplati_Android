@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFF</color>
+    <color name="colorPrimaryDark">#CAD5E6</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="bottomBar">#FF3C76</color>
+    <color name="textColor">#000</color>
+    <color name="star">#FFB906</color>
+    <color name="pin_background">#F1F5FC</color>
+    <color name="button">#0C4FBD</color>
+    <color name="button_tint">#CAD5E6</color>
+    <color name="nav">#FAFAFA</color>
+</resources>

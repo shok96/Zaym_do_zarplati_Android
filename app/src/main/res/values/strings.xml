@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Займы онлайн до зарплаты</string>
+    <string name="title_zaymi">Займы</string>
+    <string name="title_cards">Карты</string>
+    <string name="title_credit">Кредиты</string>
+    <string name="user_acept_privace">Приложение создано для подбора онлайн кредитов, займов и карт. Используя приложение “microzaym” Вы подтверждаете, что принимаете и ознакомлены с</string>
+    <string name="privacy">Политикой конфиденциальности</string>
+    <string name="user_acept_check">Я принимаю пользовательское соглашение</string>
+    <string name="pin_phone_no_ues">мы не используем ваш телефон для рассылки и не передаем третьим лицам</string>
+    <string name="user_acept_title">Пользовательское соглашеие</string>
+    <string name="pin_title">Подвердите вход</string>
+    <string name="privacy_title">Политика конфиденциальности</string>
+    <string name="title_zaimy_detail">Займер</string>
+    <string name="detail">ООО МФК "Займер" состоит в государственном реестре микрофинансовых организаций Центрального банка России. Мы уважаем и соблюдаем все законы и требования регулирующих органов.</string>
+    <string name="tab_credit">Кредитные</string>
+    <string name="tab_debet">Дебетовые</string>
+    <string name="tab_rasrok">Рассрочки</string>
+    <string name="default_notification_channel_id">89947</string>
+    <string name="facebook_app_id">2971240522973918</string>
+    <string name="sms">Введите код из смс. Не пришло смс?</string>
+</resources>

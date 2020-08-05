@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_zaymi"
+        android:icon="@drawable/bank_1"
+        android:title="@string/title_zaymi" />
+
+    <item
+        android:id="@+id/navigation_cards"
+        android:icon="@drawable/icon"
+        android:title="@string/title_cards" />
+
+    <item
+        android:id="@+id/navigation_credit"
+        android:icon="@drawable/creditcard"
+        android:title="@string/title_credit" />
+
+</menu>
