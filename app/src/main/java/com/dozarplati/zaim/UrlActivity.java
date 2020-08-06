@@ -7,6 +7,7 @@ import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.webkit.CookieManager;
 import android.webkit.ValueCallback;
@@ -14,8 +15,11 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.dozarplati.zaim.utils.AFURLS;
@@ -34,7 +38,17 @@ public class UrlActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //getActionBar().hide();
         //getSupportActionBar().hide();
-        getSupportActionBar().setTitle(getIntent().getExtras().getString("title"));
+        //getSupportActionBar().setTitle(getIntent().getExtras().getString("title"));
+        ViewGroup actionBarLayout = (ViewGroup) getLayoutInflater().inflate(
+                R.layout.toolbar,
+                null);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowCustomEnabled(true);
+        TextView text = actionBarLayout.findViewById(R.id.title);
+        text.setText(getIntent().getExtras().getString("title"));
+        actionBar.setCustomView(actionBarLayout);
         showWebView(getIntent().getAction());
     }
 

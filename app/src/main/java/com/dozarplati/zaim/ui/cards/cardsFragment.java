@@ -27,6 +27,7 @@ public class cardsFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_cards, container, false);
         this.root = root;
         initGUI(root);
+        load();
         return root;
     }
 
@@ -39,7 +40,12 @@ public class cardsFragment extends Fragment {
     void initGUI(View root){
         viewPager = root.findViewById(R.id.view_pager);
         tabs = root.findViewById(R.id.tabs);
-        viewPager.removeAllViews();
+        //viewPager.removeAllViews();
+
+
+    }
+
+    void load(){
         sectionsPagerAdapter = new cardsPagerAdapter(getActivity(), getParentFragmentManager());
         try {
             if (Loader.getDb().getApp_config().getCards_item().equals("1")) {
@@ -50,17 +56,18 @@ public class cardsFragment extends Fragment {
             }
         }
         catch (Exception e){
-            viewPager.setVisibility(View.GONE);
-            root.findViewById(R.id.empty_view).setVisibility(View.VISIBLE);
+            if(viewPager.getAdapter() == null){
+                viewPager.setVisibility(View.GONE);
+                root.findViewById(R.id.empty_view).setVisibility(View.VISIBLE);
+            }
         }
         tabs.setupWithViewPager(viewPager);
-
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        initGUI(root);
+        //initGUI(root);
     }
 
     @Override

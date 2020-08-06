@@ -90,7 +90,18 @@ public class AdapterCredit extends RecyclerView.Adapter<AdapterCredit.ViewHolder
         });
 
 
+        Glide.with(holder.itemView).load(card.getScreen()).into(holder.head_logo);
 
+        if(Integer.getInteger(card.getVisa(), 1) != 1  || card.getVisa().length() == 0)
+            holder.visa.setVisibility(View.GONE);
+        if(Integer.getInteger(card.getMastercard(), 1) != 1  || card.getMastercard().length() == 0)
+            holder.mastercard.setVisibility(View.GONE);
+        if(Integer.getInteger(card.getMir(), 1) != 1  || card.getMir().length() == 0)
+            holder.mir.setVisibility(View.GONE);
+        if(Integer.getInteger(card.getYandex(), 1) != 1  || card.getYandex().length() == 0)
+            holder.ya.setVisibility(View.GONE);
+        if(Integer.getInteger(card.getQiwi(), 1) != 1  || card.getQiwi().length() == 0)
+            holder.qiwi.setVisibility(View.GONE);
 
 
     }
@@ -105,7 +116,7 @@ public class AdapterCredit extends RecyclerView.Adapter<AdapterCredit.ViewHolder
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-
+        ImageView head_logo, visa, ya, qiwi, mir, mastercard;
         TextView head_title, body_text_summ, body_text_stavka, body_text_srok;
         TextView rating;
         Button body_card_oform, body_card_desc;
@@ -125,6 +136,12 @@ public class AdapterCredit extends RecyclerView.Adapter<AdapterCredit.ViewHolder
                 body_card_desc = (Button)itemView.findViewById(R.id.body_card_desc);
                 body_card_oform = (Button)itemView.findViewById(R.id.body_card_oform);
 
+            head_logo = (ImageView)itemView.findViewById(R.id.head_logo);
+            visa = (ImageView)itemView.findViewById(R.id.visa);
+            ya = (ImageView)itemView.findViewById(R.id.ya);
+            qiwi = (ImageView)itemView.findViewById(R.id.qiwi);
+            mir = (ImageView)itemView.findViewById(R.id.mir);
+            mastercard = (ImageView)itemView.findViewById(R.id.mastercard);
 
             srok = (LinearLayout)itemView.findViewById(R.id.srok);
             summ = (LinearLayout)itemView.findViewById(R.id.summ);

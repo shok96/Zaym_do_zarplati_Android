@@ -9,14 +9,14 @@ public class RetrofitProvider {
 
     public RetrofitProvider(){
         this.provider = new Retrofit.Builder()
-                .baseUrl("https://zaimbezotkaza.xyz/")
+                .baseUrl("https://zaimdozarplaty.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 //.client(httpClient.build())
                 .build();
 
         this.provider_date = new Retrofit.Builder()
-                .baseUrl("https://ioszaimback.com/")
+                .baseUrl("https://zaimdozarplaty.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 //.client(httpClient.build())

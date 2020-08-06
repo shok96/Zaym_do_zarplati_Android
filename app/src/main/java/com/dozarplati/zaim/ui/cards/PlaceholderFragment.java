@@ -33,6 +33,7 @@ public class PlaceholderFragment extends Fragment {
     AdapterCardDebet adapterCardDebet;
     AdapterCardInstallment adapterCardInstallment;
     int id = 0;
+    View root;
 
     PlaceholderFragment(int id){
         this.id = id;
@@ -65,17 +66,24 @@ public class PlaceholderFragment extends Fragment {
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_cards_view, container, false);
+        root = inflater.inflate(R.layout.fragment_cards_view, container, false);
 
-        initGUI(root);
+        //initGUI(root);
 
         return root;
     }
 
-   void initGUI(View root){
+    @Override
+    public void onResume() {
+        super.onResume();
+        initGUI(root);
+    }
+
+    void initGUI(View root){
        rec = (RecyclerView)root.findViewById(R.id.rec);
        listnerData();
    }
+
 
 
     void listnerData(){

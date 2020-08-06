@@ -138,18 +138,18 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/body_text_summ"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="от 1000 до 30 000 руб"
-                    android:textColor="@color/textColor" />
-
-                <TextView
                     android:id="@+id/body_text_summ_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
                     android:text="Сумма:" />
+
+                <TextView
+                    android:id="@+id/body_text_summ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="от 1000 до 30 000 руб"
+                    android:textColor="@color/textColor" />
 
             </LinearLayout>
 
@@ -164,19 +164,19 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/body_text_stavka_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="Ставка:" />
+
+                <TextView
                     android:id="@+id/body_text_stavka"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="от 0% в день"
                     android:textColor="@color/textColor" />
-
-                <TextView
-                    android:id="@+id/body_text_stavka_no"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:text="Ставка:" />
 
             </LinearLayout>
 
@@ -191,19 +191,19 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/body_text_srok_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="Срок:" />
+
+                <TextView
                     android:id="@+id/body_text_srok"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="7 до 30 дней"
                     android:textColor="@color/textColor" />
-
-                <TextView
-                    android:id="@+id/body_text_srok_no"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:text="Срок:" />
 
             </LinearLayout>
 
