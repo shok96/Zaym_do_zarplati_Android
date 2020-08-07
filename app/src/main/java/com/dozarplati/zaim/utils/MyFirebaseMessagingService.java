@@ -84,7 +84,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         if (remoteMessage.getNotification() != null) {
             Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
 
-            sendNotification(remoteMessage.getNotification().getBody(), link, remoteMessage);
+            sendNotification(remoteMessage.getNotification(), link, remoteMessage);
 
         }
 
@@ -175,7 +175,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
      *
      * @param messageBody FCM message body received.
      */
-    private void sendNotification(String messageBody, String params, RemoteMessage remoteMessage) {
+    private void sendNotification(RemoteMessage.Notification messageBody, String params, RemoteMessage remoteMessage) {
         Intent intent = new Intent(this, Splash.class);
         try {
             if (params.length()>0) {
@@ -202,6 +202,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         NotificationCompat.Builder notificationBuilder = null;
 
         Bitmap remote_picture = null;
+        String title = "";
+        if(messageBody.getTitle() != null){
+            title = getString(R.string.app_name);
+        }
+        else{
+            title = messageBody.getTitle();
+        }
         try {
             String imgu = remoteMessage.getNotification().getImageUrl().toString();
             Bitmap bit = getBitmapfromUrl(imgu);
@@ -210,8 +217,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             notificationBuilder =
                     new NotificationCompat.Builder(this, channelId)
                             .setSmallIcon(R.mipmap.icon)
-                            .setContentTitle(getString(R.string.app_name))
-                            .setContentText(messageBody)
+                            .setContentTitle(title)
+                            .setContentText(messageBody.getBody())
                             .setAutoCancel(true)
                             .setSound(defaultSoundUri)
                             .setContentIntent(pendingIntent)
@@ -224,13 +231,15 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             notificationBuilder =
                     new NotificationCompat.Builder(this, channelId)
                             .setSmallIcon(R.mipmap.icon)
-                            .setContentTitle(getString(R.string.app_name))
-                            .setContentText(messageBody)
+                            .setContentTitle(title)
+                            .setContentText(messageBody.getBody())
                             .setAutoCancel(true)
                             .setSound(defaultSoundUri)
                             .setContentIntent(pendingIntent);
 
         }
+
+
 
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
