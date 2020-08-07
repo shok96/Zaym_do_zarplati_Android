@@ -12,6 +12,8 @@ import android.view.Window;
 import android.webkit.CookieManager;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -99,14 +101,15 @@ public class UrlActivity extends AppCompatActivity {
 
     private class MyWebViewClient extends WebViewClient {
         @Override
-        public void onReceivedError(WebView view, int errorCode,
-                                    String description, String failingUrl) {
-
-            Toast.makeText(getApplicationContext(), "Oh no! " + description,
-                    Toast.LENGTH_SHORT).show();
-
+        public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+            super.onReceivedError(view, errorCode, description, failingUrl);
         }
 
+        @Override
+        public void onReceivedHttpError(WebView view, WebResourceRequest request,
+                                        WebResourceResponse errorResponse) {
+            super.onReceivedHttpError(view, request, errorResponse);
+        }
 
 
         public void onPageFinished(WebView view, String url) {

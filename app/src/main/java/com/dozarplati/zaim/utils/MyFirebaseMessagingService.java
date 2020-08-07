@@ -177,15 +177,18 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
      */
     private void sendNotification(String messageBody, String params, RemoteMessage remoteMessage) {
         Intent intent = new Intent(this, Splash.class);
-        if (params.length()>0) {
-            intent.putExtra("cat", params.split("/")[0]);
-            try {
-                intent.putExtra("pos", Integer.valueOf(params.split("/")[1]));
-            }
-            catch (Exception e){
+        try {
+            if (params.length()>0) {
+                intent.putExtra("cat", params.split("/")[0]);
 
+                intent.putExtra("pos", Integer.valueOf(params.split("/")[1]));
+
+
+                Log.e(TAG, params);
             }
-            Log.e(TAG, params);
+        }
+        catch (Exception e){
+
         }
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,

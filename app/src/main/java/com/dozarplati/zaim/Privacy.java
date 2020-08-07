@@ -21,6 +21,7 @@ public class Privacy extends AppCompatActivity {
 
     void initGUI(){
         textView = (TextView)findViewById(R.id.privacy_text);
-        textView.setText(Html.fromHtml(Loader.getDb().getInit_license_term()));
+        if(Loader.getDb() != null)
+            textView.setText(Html.fromHtml(Loader.getDb().getInit_license_term()));
     }
 }
